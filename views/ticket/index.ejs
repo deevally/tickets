@@ -1,0 +1,43 @@
+<% include ../partials/header%>
+
+<div class="container">
+<header class="jumbotron">
+    <div class="container">
+    <h1>Mic <strong>Tickets</strong></h1>
+    <p>Create tickets for your events all over the world</p>
+<p>
+     <a class="btn btn-primary btn-large" href="/tickets/new">Create new Tickets HERE</a>
+
+</p>
+</div>
+</header>
+<br>
+
+<div class="row">
+<% ticket.forEach(function(tick){%>
+
+<div class="col-md-6 col-sm-6 "> 
+    <div class="caption jumbotron">
+        <h4><strong>Event</strong>  : <%=tick["name"]%></h4> <br>
+        <h4><strong>Description</strong> : <%=tick.description%></h4>
+        <h4><strong>Price</strong> : &#8358 <%=tick.price%>/ticket</h4>
+        <h4><strong>Number of Tickets</strong> : <%=tick.quantity%></h4>
+        <h4><strong>Type of Ticket</strong> : <%=tick.typeOfTicket%></h4>
+
+        
+            <a class="btn btn-info btn-small" href="/tickets/<%=tick._id%>/edit">Edit Ticket</a>
+           
+       
+           
+    </div>
+
+    
+
+
+</div>
+
+<%});%>
+</div> 
+
+<% include ../partials/footer%>
+</div>

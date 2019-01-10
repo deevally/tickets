@@ -1,0 +1,47 @@
+<% include ../partials/header %>
+<div class="text-center mt-5">
+    
+    
+
+
+<form action="/tickets/<%=editTicket._id%>?_method=PUT" method="POST" style="width:30%;" class=" ml-auto mr-auto">
+    
+    <div class ="form-group">
+        <input class="form-control" type="text"placeholder="Event name" name="editTC[name]" value=" <%= editTicket.name %>">
+
+    </div>
+    <div class ="form-group">
+        <input class="form-control" type="text" placeholder="Description" name="editTC[description]" value=" <%= editTicket.description %>">
+
+    </div>
+    
+
+    <div class ="form-group">
+        <input class="form-control" type="text" placeholder="VIP, FREE, DISCOUNT e.t.c"  name="editTC[typeOfTicket]"  value=" <%= editTicket.typeOfTicket %>">
+
+    </div>
+    
+     <div class ="form-group">
+        <input class="form-control" type="number" placeholder="price" name="editTC[price]" value=" <%= editTicket.price %>" min="0" step="1">
+
+    </div>
+   
+    <div class ="form-group">
+        <input class="form-control" type="number" placeholder="quantity" name="editTC[quantity]" value=" <%= editTicket.quantity %>" min="1" step="1"> 
+
+    </div>
+   
+
+    <div class ="form-group">
+        <input class="btn btn-success btn-block" type="submit" value="Update">
+
+    </div>
+
+</form>
+ <a href="/tickets">Go Back to All Tickets</a>
+</div>
+
+<% include ../partials/footer %>
+
+
+
